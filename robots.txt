@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /received/
+
+Sitemap: https://getconscious.xyz/sitemap.xml
