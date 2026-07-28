@@ -7,14 +7,10 @@
     <meta name="robots" content="noindex" />
     <title>Message received, Get Conscious</title>
     <script>
-      const requestedLanguage = new URLSearchParams(
-        window.location.search,
-      ).get("lang");
-      document.documentElement.lang = ["en", "id", "fr"].includes(
-        requestedLanguage,
-      )
-        ? requestedLanguage
-        : "en";
+      document.documentElement.lang =
+        new URLSearchParams(window.location.search).get("lang") === "id"
+          ? "id"
+          : "en";
     </script>
     <style>
       :root {
@@ -123,16 +119,9 @@
         transform: translateY(-3px) rotate(-1deg);
       }
 
-      .lang-en,
-      .lang-id,
-      .lang-fr {
+      html[lang="en"] .lang-id,
+      html[lang="id"] .lang-en {
         display: none;
-      }
-
-      html[lang="en"] .lang-en,
-      html[lang="id"] .lang-id,
-      html[lang="fr"] .lang-fr {
-        display: block;
       }
 
       @keyframes spin {
@@ -189,13 +178,6 @@
           Pesanmu sudah kami terima. Kami akan merespons dalam 3 × 24 jam.
         </p>
         <a href="/">Kembali ke Get Conscious <span aria-hidden="true">↗</span></a>
-      </div>
-      <div class="lang-fr">
-        <h1>Message reçu.</h1>
-        <p>
-          Votre message a bien été reçu. Nous vous répondrons sous 3 × 24 heures.
-        </p>
-        <a href="/">Retour à Get Conscious <span aria-hidden="true">↗</span></a>
       </div>
     </main>
   </body>
